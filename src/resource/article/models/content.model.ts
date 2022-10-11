@@ -1,31 +1,28 @@
 import { UUIDV4 } from 'sequelize';
 import { Column, Table, Model, BelongsTo, ForeignKey, } from 'sequelize-typescript';
 import { User } from '../../users/models/user.model';
+import { Article } from './article.model';
 
 
 @Table
-export class Article extends Model {
+export class Content extends Model {
   @Column({ primaryKey: true , defaultValue: UUIDV4()})
   id: string;
-  @ForeignKey(() => User)
+  @ForeignKey(() => Article)
   @Column
-  userid : string;
-  @BelongsTo(() => User)
-  User: User;
+  articleId : string;
+  @BelongsTo(() => Article)
+  Article: Article;
   @Column
-  title : string;
-
+  type:ContentType
   @Column
-  date: string; 
-
-  @Column
-  description: string;
-
-
-  @Column
-  status:string
-
+  contentUrl:string
+  
 
 }
 
-//push notification
+export enum ContentType {
+    Video,
+    Photo,
+    Audio
+}

@@ -1,6 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsNotEmpty, IsString } from "class-validator";
-import { messaging } from "firebase-admin";
 
 export class createTeamMemberDto {
   @ApiProperty({ example: "6305eeb7c51b6fe64bb3a5dc" })

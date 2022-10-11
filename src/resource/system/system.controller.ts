@@ -1,13 +1,8 @@
 import {
-  Body,
-  Controller,
-  Get,
-  Post,
-  Request,
-  UploadedFile,
-  UploadedFiles,
-  UseGuards,
-  UseInterceptors,
+ Controller,
+ Post,
+ UploadedFile,
+ UseInterceptors,
 } from "@nestjs/common";
 import { InjectModel } from "@nestjs/sequelize";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";

@@ -3,6 +3,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { Article } from './models/article.model';
 import { ArticleController } from './article.controller';
 import { ArticleService } from './article.service';
+import { Content } from './models/content.model';
 
 
 
@@ -10,7 +11,7 @@ import { ArticleService } from './article.service';
 @Module({
 
     imports: [
-        SequelizeModule.forFeature([ Article ]),
+        SequelizeModule.forFeature([ Article, Content ]),
 
     ],
   controllers: [ArticleController],

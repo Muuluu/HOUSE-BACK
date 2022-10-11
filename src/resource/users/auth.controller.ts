@@ -1,6 +1,6 @@
-import { Body, Controller, Headers, HttpException, Post } from "@nestjs/common";
-import { ApiHeader, ApiHeaders, ApiTags } from "@nestjs/swagger";
-import { request } from "http";
+import { Body, Controller,  HttpException, Post } from "@nestjs/common";
+import { ApiTags } from "@nestjs/swagger";
+;
 import { AuthService } from "./auth.service";
 import { CheckUserContact, LoginRequestDto, RefreshToken, RegisterRequestDto } from "./dto/auth.dto";
 import { ChangePasswordAcceptDto, ChangePasswordReqDto } from "./dto/forgot-password.dto";

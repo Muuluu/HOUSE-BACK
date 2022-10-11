@@ -1,6 +1,5 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/sequelize";
-import { send } from "process";
 import { connector } from "../../utils/connector";
 import { User } from "./models/user.model";
 

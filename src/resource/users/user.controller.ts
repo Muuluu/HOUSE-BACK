@@ -8,13 +8,9 @@ import {
 } from "@nestjs/common";
 
 import { UserAccessGuard } from "src/guard/user.guard";
-import { LoginRequestDto } from "./dto/auth.dto";
 import { UserService } from "./user.service";
-import { ApiHeader, ApiHeaders, ApiBearerAuth, ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { UserUpdateDto } from './dto/user-update.dto';
-import { UserModule } from './user.module';
-import { createTeamDto } from "./dto/create-team.dto";
-import { createTeamMemberDto } from "./dto/create-team-member.dto";
 import { UpdatePicDto } from "./dto/update-pic.dto";
 
 @ApiTags("User")
@@ -60,13 +56,5 @@ export class UserController {
     }
   }
   
-  @Post("team")
-  createTeam(@Body() body: createTeamDto, @Request() {user}){
-  return this.userService.createTeam(body, user._id);
-  }
 
-  @Post("teamMembers")
-  createTeamMember(@Body() body: createTeamMemberDto, @Request() {user}){
-    return this.userService.createTeamMember( body );
-  }
 }
